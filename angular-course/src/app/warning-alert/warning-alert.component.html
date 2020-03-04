@@ -1,0 +1,4 @@
+<p [ngClass]="getParagraphStyle()">
+    <span [ngClass]="{blinking: numVulnerabilities>=10}">{{strSeverity}} Warning: </span> 
+    I've found {{numVulnerabilities}} vulnerabilities!
+</p>
