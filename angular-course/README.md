@@ -1,27 +1,30 @@
-# Es02AngularCourse
+# AngularCourse
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
 
-## Development server
+Al progetto è stata linkata la libreria Bootstrap v. 3.4.1
+---
+## Lezione 1
+### Obiettivi
+- Capire come funziona un componente di Angular
+- Capire la differenza tra **binding unidirezionale e bidirezionale**
+- Imparare l'utilizzo di alcune espressioni come `[ngStyle]`, `[ngClass]`, `{{ }}`
+### Componenti
+#### success-alert
+Un semplice tag `<p>`.
+#### warning-alert
+Un tag <p> che, a differenza del precedente, avverte l'utente di alcuni errori (numero generato dinamicamente nell'attributo `numVulnerabilities`). Nel caso in cui ci fossero numerosi errori, viene impostato a `SEVERE` l'attributo `stSeverity`, che si occupa di animare una parte del testo del componente.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Lezione 2
+### Obiettivi
+- Imparare l'utilizzo di alcune espressioni come `*ngIf`, `[(ngModel)]`
+- Imparare a utilizzare il **binding tra proprietà HTML e variabili TS**
+### Componenti
+#### server
+È il componente che simula lo stato del server. Ad ogni istanza esso genera in maniera casuale l'ID (`serverID`) e lo stato (online/offline) (`serverStatus`) del server creato.
+#### server-farm
+È il componente che permette all'utente di creare l'istanza di un server e di visualizzare tutti i server generati. I server sono "salvati" all'interno del vettore `servers`: in realtà non vengono salvati i server veri e proprio ma vengono semplicemente agigunti valori casuali in maniera tale da generare esattamente il numero di server desiderato (questo perché l'istanza è scollegata da ciò che creiamo noi).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+_Rosso Lorenzo_
