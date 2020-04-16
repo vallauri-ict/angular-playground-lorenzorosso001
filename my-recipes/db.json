@@ -1,0 +1,29 @@
+{
+  "recipes":[
+    {
+      "name":"Ricetta test",
+      "description":"Questo è un test",
+      "imagePath":"https://www.adnkronos.com/rf/image_size_400x300/Pub/AdnKronos/Assets/Immagini/Redazionale/S/Matteo_Salvini_profilo_Afp.jpg"
+    },
+    {
+      "name":"Nome",
+      "description":"Descrizione",
+      "imagePath":"https://www.adnkronos.com/rf/image_size_400x300/Pub/AdnKronos/Assets/Immagini/Redazionale/S/Matteo_Salvini_profilo_Afp.jpg"
+    },
+    {
+      "name":"Amazzonia",
+      "description":"Bosco",
+      "imagePath":"https://www.adnkronos.com/rf/image_size_400x300/Pub/AdnKronos/Assets/Immagini/Redazionale/S/Matteo_Salvini_profilo_Afp.jpg"
+    },
+    {
+      "name":"Caffè",
+      "description":"Bar della stazione",
+      "imagePath":"https://www.adnkronos.com/rf/image_size_400x300/Pub/AdnKronos/Assets/Immagini/Redazionale/S/Matteo_Salvini_profilo_Afp.jpg"
+    },
+    {
+      "name":"Aldo, Giovanni e Giacomo",
+      "description":"Giacomino",
+      "imagePath":"https://www.adnkronos.com/rf/image_size_400x300/Pub/AdnKronos/Assets/Immagini/Redazionale/S/Matteo_Salvini_profilo_Afp.jpg"
+    }
+  ]
+}
