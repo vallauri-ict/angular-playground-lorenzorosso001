@@ -1,27 +1,145 @@
-# MyRecipes
+# my-recipes :page_facing_up::cookie:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+### Fina Matteo - 5B INF - I.I.S. Vallauri, Fossano (CN)
 
-## Development server
+# About the course
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This is going to be an app for the shopping list compiling.<br>
+It will inlcude a collection of recipes in which the user have the possibility to watch and edit details.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Lesson 8
+### Property and Event Binding
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* **html** and **typescript** files update:
+```
+recipes.component.html and recipes.component.ts
+├── recipes-detail.component.html and recipes-detail.component.ts
+└── recipes-list.component.html and recipes-list.component.ts
+    └── recipe-item.component.html and recipe-item.component.ts
+```
 
-## Running unit tests
+* use of property and event binding in order to make the *recipes section* work
+    * the event is propagated from the **recipe-item** to the upper roots in order to reach the **recipe-detail**
+* the useful data are stored in the *recipe* variable
+* *@Input* is used to recive data and *@Output* is used to create the Event (with the *EventEmitter*) that will be sent
+    * by writing the *@Output variable* in rouded brackets, like *(click)*, the event is recalled
+* in **recipe-component** is used an `*ngIf` to check the *recipe* passed by the generated Event, so the **recipe-detail** section is showed with the data of the **recipe-item** selected
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Lesson 7
+### Navigation in the header
 
-## Further help
+* **html** and **typescript** files update:
+```
+app.component.ts and app.component.html
+└── header.component.html and header.component.ts
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* click over the button in the **header.component** controlled by the *onSelect* function which generate an Event 
+* in the **app.component** the correct feature is loaded by clicking the right button
+    * with a `*ngIf` the correct component (*<app-recipe>* or *<app-shopping-list>*)is loaded and showed
+
+
+
+## Lesson 6
+### Database data access
+
+* **typescript** files update:
+```
+app.module.ts
+├── data-storage.service.ts
+└── recipes-list.component.html
+```
+
+* **db.json** data update
+* **app.module.ts** *HttpClientModule* import
+    * **data-storage.service.ts** *HttpClient* module import and code update in order to reach database data for */recipes*
+        * **recipe-list.component.ts** static array commented because now data came from **db.json** and populate the array *recipes*
+
+
+
+## Lesson 5
+### Database and data-storage
+
+* **data-storage** service created by Angular CLI in the `shared` folder
+* **db.json** file creation: it contains the same data of the **recipe-list.component.ts** from the *Recipe* array
+    * the database can be easily managed by installing the [JSON Server](www.npmjs.com/package/json-server) npm, that fake the API structure without coding
+
+
+
+## Lesson 4
+### Shared root, ingredients, shopping-list and its item
+
+* **html** and **typescript** files update:
+```
+┐
+├── ingredient.model.ts
+└── shopping-list.component.html and shopping-list.component.ts
+    └── shopping-edit.component.html
+```
+
+* `shared` folder creation, which includes files accessible from all the components
+* **ingredients.model.ts** file creation in the new root
+* Usage of `*ngFor` for *ingredients* creation
+    * Each Ingredient has a *name* and an *amount*
+
+
+
+## Lesson 3
+### Recipes, recipe-list and its items
+
+* **html** and **typescript** files update:
+```
+recipes.component.html
+├── recipe-detail.component.html
+└── recipe-list.component.html and recipe-list.component.ts
+    └── recipe-item.component.html and recipe-item.component.ts
+```
+
+* **recipe.model.ts** file creation, a class for **Recipes**
+
+* Usage of `*ngFor` for items component creation
+* Usage of **data-binding** for the recipe info with the `@Input` decorator
+* Each Recipe has a *name* a *description* and an *imagePath*
+
+
+
+## Lesson 2
+### Header and Recipes infrastructure
+
+* **html** and **typescript** files update:
+```
+app.component.html
+├── header.component.html and header.component.ts
+├── recipes.component.html
+│   └── recipe-list.component.html
+└── recipes.component.html
+```
+
+
+
+## Lesson 1
+
+* **header** component creation manually
+* **recipes** component creation from Angular CLI
+    * **recipe-detail** sub-component creation from Angular CLI
+    * **recipe-list** sub-component creation from Angular CLI
+        * **recipe-item** sub-component creation from Angular CLI
+
+
+
+
+## Project's folders structure:
+```
+my-recipes/
+├── header
+├── recipes/
+│   ├── recipe-detail
+│   └── recipe-list/
+│       └── recipe-item
+└── shopping-list/
+    └── shopping-edit
+```
