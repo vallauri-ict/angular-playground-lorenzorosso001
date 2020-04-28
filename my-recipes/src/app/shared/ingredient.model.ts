@@ -1,4 +1,5 @@
 // FILE CONDIVISI TRA I VARI COMPONENT
+// DEFINISCO UN TIPO
 export class Ingredient {
     // public name: string;
     // public amount: number;
