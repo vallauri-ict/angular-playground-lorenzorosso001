@@ -1,3 +1,4 @@
+import { ShoppingListService } from './shopping-list.service';
 import { Ingredient } from './../shared/ingredient.model';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,14 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingListComponent implements OnInit {
 
-  ingredients: Ingredient[] = [
-    new Ingredient("mela", 5),
-    new Ingredient("pomodori", 10)
-  ]
+  ingredients: Ingredient[];
 
-  constructor() { }
+  constructor(public slService: ShoppingListService) { }
 
   ngOnInit(): void {
+    this.ingredients = this.slService.getIngredients();
   }
 
   //ricevo l'ingrediente da shopping-edit che ha emesso l'evento

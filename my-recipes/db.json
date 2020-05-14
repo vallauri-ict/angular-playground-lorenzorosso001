@@ -3,7 +3,17 @@
 		{
 			"name": "A Test Recipe",
 			"description": "This is simply a test.",
-			"imagePath": "https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_960_720.jpg"
+      "imagePath": "https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_960_720.jpg",
+      "ingredients": [
+        {
+          "name" : "Salt",
+          "amount" : 3
+        },
+        {
+          "name" : "Eggs",
+          "amount" : 3
+        }
+      ]
 		},
 		{
 			"name": "Another Test",
