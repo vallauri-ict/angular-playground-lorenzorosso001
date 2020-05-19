@@ -1,6 +1,6 @@
-import { Recipe } from './recipe.model';
-import { Injectable, EventEmitter, Output } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
+import { Recipe } from './recipe.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +18,4 @@ export class RecipeService {
       this.recipes = data;
     })
   }
-
 }
