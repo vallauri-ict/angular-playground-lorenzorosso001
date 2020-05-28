@@ -1,17 +1,19 @@
 import { Ingredient } from './../shared/ingredient.model';
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
 import { Recipe } from './recipe.model';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
-  @Output() recipeSelected = new EventEmitter<Recipe>();
-
   public recipes: Recipe[];
+  public selectedRecipe: Recipe;
 
-  constructor(private dataStorageService: DataStorageService) { }
+  constructor(private dataStorageService: DataStorageService, private shoppingListService: ShoppingListService) {
+    
+  }
 
   getRecipes() {
     this.dataStorageService.sendGetRequest('recipes').subscribe((data: any[]) => {
@@ -21,10 +23,13 @@ export class RecipeService {
   }
 
   getRecipe(id: number) {
-    return this.recipes[id];
+    this.dataStorageService.sendGetRequest('recipes/' + id).subscribe((data: any[]) => {
+      console.log(data);
+      this.recipes = data;
+    });
   }
 
-  /*addIngredientsToShoppingList(ingredients: Ingredient[]) {
-    this.shoppingListService.addIngredients(ingredients);
-  }*/
+  addIngredientsToShoppingList(ingredients: Ingredient[]) {
+    this.shoppingListService.addIngredientsToShoppingList(ingredients);
+  }
 }
