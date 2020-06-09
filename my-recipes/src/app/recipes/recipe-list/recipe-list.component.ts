@@ -3,6 +3,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { RecipeService } from '../recipe.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-list',
@@ -23,7 +24,7 @@ export class RecipeListComponent implements OnInit {
   // ]
 
   // constructor(private dataStorageService: DataStorageService) { }
-  constructor(public recipeService: RecipeService) { }
+  constructor(public recipeService: RecipeService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     // this.dataStorageService.sendGetRequest('recipes').subscribe((data: Recipe[]) => {
@@ -36,5 +37,9 @@ export class RecipeListComponent implements OnInit {
   // onRecipeSelected(recipe: Recipe) {
   //   this.recipeWasSelected.emit(recipe);
   // }
+
+  onNewRecipe() {
+    this.router.navigate(['new'], { relativeTo: this.route });
+  }
 
 }

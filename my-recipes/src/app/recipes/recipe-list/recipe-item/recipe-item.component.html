@@ -1,4 +1,9 @@
-<a [appHighlight] defaultColor="LightYellow" style="cursor:pointer" class="list-group-item clearfix" [routerLink]="[recipe.id]" >
+<!-- <a [appHighlight] defaultColor="LightYellow" href="#" class="list-group-item clearfix" (click)="onSelected()"> -->
+<a
+   [routerLink]="recipe.id"
+   [appHighlight]
+   defaultColor="LightYellow"
+   class="list-group-item clearfix">
 	<div class="pull-left">
 		<h4 class="list-group-item-heading">{{ recipe.name }}</h4>
 		<p class="list-group-item-text">{{ recipe.description }}</p>
